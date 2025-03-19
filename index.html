@@ -1,135 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <title>Lesson_1  </title>
-    <style>* { padding: 0; margin: 0; } canvas { background: white; display: block; margin: 0 auto; }</style>
-</head>
-<body>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="src/mystyle.css">
+  
+      <!-- NEW -->
+      <!-- ********************************************************************** -->
+      <title>My Arcade</title>					<!-- NEW  -->
+      <link rel="icon" type="image/png" href="src/images/icon.png"> 	<!-- NEW  -->   
+      <!-- ********************************************************************** -->
+      
+  </head>
+  <body>
 
-<canvas id="myCanvas" width="480" height="320" style="border:1px solid black;"></canvas>
+    <!-- Banner Image Section -->
+    <div class="banner"></div>
 
-<script>
+    <!-- Navigation bar -->
+	<nav>
+		<!-- <a href="home.html" target="contentFrame">HOME</a> -->
+	</nav>
 
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
-	
-	///////////////////////////////////////////////////////////////
-	// Adding a text
+    <!-- Main Content Area -->
+	<iframe id="contentFrame" name="contentFrame" src="home.html"></iframe>
 
-	ctx.font = "10px Arial";
-	ctx.fillStyle = "Green";
-	
-	//(text, x-coordinates, y-coordinates)
-	ctx.fillText("Hello World", 0,10);
-	///////////////////////////////////////////////////////////////
-	
-	
-	//Q1.1 - Change the text.
-	//Q1.2 - Change the text colour.
-	//Q1.3 - Change the text font to 30xp.
-	//Q1.4 - Change the y-coordinates (so you can see the text).
-	//Q1.5 - Change the x-coordinates.
-	//Q1.6 - Change the x & y coordinates to put your text in the center of the  Canvas.
-		// HINT  //////////////////////////////////////////////////////
-		// canvas.width will give you the width of the canvas "480".
-		// canvas.height will give you the height of the canvas "320".
+  </body>
 
 
-	///////////////////////////////////////////////////////////////
-	// Adding a rectangle
-	ctx.beginPath();
-	////( x-coordinates, y-coordinates,width,height)
-	ctx.rect(0, 0, 20,40);
-	ctx.strokeStyle = "black";
-	ctx.stroke();
-	ctx.closePath();
-	///////////////////////////////////////////////////////////////
-	
-	
-	//Q2.1- make the rectangle wider .
-	//Q2.2- make the rectangle longer.
-	//Q2.3- move the rectangle down the Canvas.
-	//Q2.4- move the rectangle to the right.
-	//Q2.5- Move the rectangle so the text is inside it.
-	
-
-
-	// Put all to together in a function
-	///////////////////////////////////////////////////////////////
-	
-	txt_colour="black"
-	let txt = " DVD "
-	
-	txt_x =(canvas.width/2)-20
-	txt_y = canvas.height/2
-	
-	function dvdLogo(){
-	
-		ctx.font = "30px Arial";
-		ctx.fillStyle = txt_colour;
-		ctx.fillText(txt, txt_x,txt_y);
-		
-		ctx.beginPath();
-		ctx.rect(txt_x, txt_y-35, ctx.measureText(txt).width,45);
-		ctx.strokeStyle = "black";
-		ctx.stroke();
-		ctx.closePath();
-	}
-
-
-	//dvdLogo();
-
-	// Adding movment meaning
-	///////////////////////////////////////////////////////////////
-	let dx=1;
-	let dy=1;
-	let txt_colours = ["red", "gren", "blue", "yellow","purple"];
-	
-	function draw() {
-		
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		
-        dvdLogo();
-		
-        txt_x += dx;
-        txt_y += dy;
-		
-		
-		/*
-		if(txt_x + dx > canvas.width -ctx.measureText(txt).width ) {
-            dx = -dx;
-        }
-		
-		if(txt_x + dx  <0) {
-		
-            dx = -dx;
-        }
-		
-		*/
-		
-		
-		/*
-		if(txt_y + dy  > canvas.height || txt_y + dy  < 35) {
-            dy = -dy;
-			txt_colour=txt_colours.at(Math.floor(Math.random() * 3))
-        }
-		*/
-		
-		
-	}
-
-   // setInterval(draw, 10);
-	
-	
-	
-	//Q3.1 Change dx to  1 (what did you see)?
-	//Q3.2 Change dx to -1 (what did you see)?
-	//Q3.3 Change dy to  1 (what did you see)?
-	//Q3.4 Change dy to -1 (what did you see)? 
-	
-	
-</script>
-
-</body>
 </html>
